@@ -13,10 +13,8 @@ class ReviewController extends Controller
      */
     public function review()
     {
-        $reviews = new Review;
-        $data = $reviews->getAllReviews();
-
-        return view('reviews/review', ['review' => $data]);
+        $reviews = Review::all();
+        return view('reviews.review', compact('reviews'));
     }
 
     /**
