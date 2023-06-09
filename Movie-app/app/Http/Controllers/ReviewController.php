@@ -11,10 +11,12 @@ class ReviewController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function review()
+    public function index()
     {
         $reviews = Review::all();
-        return view('reviews.review', compact('reviews'));
+        
+
+        return view('reviews.index',compact('reviews'));
     }
 
     /**
@@ -22,7 +24,8 @@ class ReviewController extends Controller
      */
     public function create()
     {
-        //
+        $reviews = Review::all();
+        return view('reviews.create', compact('reviews'));
     }
 
     /**
@@ -30,7 +33,17 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'movie' => 'required',
+            'user' => 'required',
+            'rating' => 'required',
+            'comment' => 'required',
+            'tanggal' => 'required|date',
+            
+        ]);
+
+        Review::create($validatedData);
+        return redirect('/reviews')->with('success', 'Review added successfully!');
     }
 
     /**
@@ -46,7 +59,8 @@ class ReviewController extends Controller
      */
     public function edit(Review $review)
     {
-        //
+        $review = Review::all();
+        return view('reviews.edit', compact('review'));
     }
 
     /**
@@ -54,7 +68,19 @@ class ReviewController extends Controller
      */
     public function update(Request $request, Review $review)
     {
-        //
+        $validatedData = $request->validate([
+            'id' =>'required',
+            'movie' => 'required',
+            'user' => 'required',
+            'rating' => 'required',
+            'comment' => 'required',
+            'tanggal' => 'required|date',
+            
+        ]);
+    
+        $review->update($validatedData);
+    
+        return redirect('/reviews')->with('success', 'Review updated successfully!');
     }
 
     /**
@@ -62,6 +88,7 @@ class ReviewController extends Controller
      */
     public function destroy(Review $review)
     {
-        //
+        $review->delete();
+        return redirect('/reviews')->with('success', 'Review deleted successfully!');
     }
 }

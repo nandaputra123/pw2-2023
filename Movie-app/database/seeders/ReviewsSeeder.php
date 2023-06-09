@@ -19,7 +19,7 @@ class ReviewsSeeder extends Seeder
             'movie' => 'Qodrat',
             'user' => 'Charles Gozali',
             'rating' => '8.6',
-            'tanggal' => '27-11-2022',
+            'tanggal' => '2022-11-27',
             'comment' => 'Sangat sangat menegangkan'
         ]);
         Review::create([
@@ -27,7 +27,7 @@ class ReviewsSeeder extends Seeder
             'movie' => 'Miracle in Cell No. 7',
             'user' => 'Hanung Bramantyo',
             'rating' => '8.4',
-            'tanggal' => '8-10-2022',
+            'tanggal' => '2022-10-08',
             'comment' => 'Mengharukan',
         ]);
         Review::create([
@@ -35,7 +35,7 @@ class ReviewsSeeder extends Seeder
             'movie' => 'Mencuri Raden Saleh',
             'user' => '	Angga Dwimas Sasongko',
             'rating' => '8.3',
-            'tanggal' => '02-06-2022',
+            'tanggal' => '2022-06-02',
             'comment' => 'Menengangkan dan sangat bagus',
         ]);
         Review::create([
@@ -43,7 +43,7 @@ class ReviewsSeeder extends Seeder
             'movie' => 'KKN di Desa Penari',
             'user' => 'Awi Suryadi',
             'rating' => '9.0',
-            'tanggal' => '30-04-2022',
+            'tanggal' => '2022-04-30',
             'comment' => 'Sangat berkesan untuk yang suka horor',
         ]);
         Review::create([
@@ -51,7 +51,7 @@ class ReviewsSeeder extends Seeder
             'movie' => 'Jakarta vs Everybody',
             'user' => 'Arief Rahman',
             'rating' => '8.8',
-            'tanggal' => '17-03-2022',
+            'tanggal' => '2022-03-17',
             'comment' => 'Dom ditampar oleh kehidupan bahwa untuk mewujudkan impian nggak cukup hanya sekadar niat saja. Dia harus siap jatuh sampai terlibat dalam dunia hitam, yaitu industri perdagangan narkoba.',
         ]);
         

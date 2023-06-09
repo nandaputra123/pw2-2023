@@ -8,10 +8,17 @@
             <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
             <li class="breadcrumb-item active">Reviews</li>
         </ol>
-        <a href="#">
+        <a href="/reviews/create">
             <button class="btn btn-success" type="submit">Create Data</button>
         </a>
     </div>
+    @if (session('success'))
+    <div class="alert alert-success">
+    {{ session('success') }}
+
+    </div>
+    
+@endif
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
@@ -26,6 +33,7 @@
                         <th>User</th>
                         <th>Rating</th>
                         <th>Comment</th>
+                        <th>Tahun</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -36,20 +44,28 @@
                         <th>User</th>
                         <th>Rating</th>
                         <th>Comment</th>
+                        <th>Tahun</th>
                         <th>Action</th>
                     </tr>
                 </tfoot>
                 <tbody>
-                    @foreach ($review as $review)
+                    @foreach ($reviews as $review)
                     <tr>
-                        <td>{{ $review['no']}}</td>
+                        <td>{{ $review['id']}}</td>
                         <td>{{ $review['movie']}}</td>
                         <td>{{ $review['user']}}</td>
                         <td>{{ $review['rating']}}</td>
                         <td>{{ $review['comment']}}</td>
+                        <td>{{ $review['tanggal']}}</td>
                         <td>
-                            <a href="" class="btn btn-sm btn-warning"> Edit</a>
-                            <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
+                            <form action="/reviews/{{ $reviews->id }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <a href="" class="btn btn-sm btn-warning"> Edit</a>
+                                <button class="btn btn-sm btn-danger" class="btn btn-sm btn-danger"
+                                onclick="return confirm('Apakah anda yakin ingin menghapus?')"type="submit">Delete</button>
+                                
+                            </form>
                         </td>
                     </tr>
                     @endforeach
