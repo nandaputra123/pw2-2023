@@ -7,11 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Review extends Model
 {
+
     use HasFactory;
-    protected $fillable = ['id','movie', 'user', 'rating', 'comment', 'tanggal'];
+
+    protected $fillable = ['film', 'user', 'rating', 'review', 'tahun'];
 
     public function getAllReviews()
     {
-        return$this->reviews;
+        return $this->reviews;
     }
+   
 }
+

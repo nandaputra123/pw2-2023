@@ -1,11 +1,11 @@
-@extends('layouts/main')
+@extends('layouts.main')
 
 @section('content')
-<h1 class="mt-4">Movies Data</h1>
+<h1 class="mt-4">Users Data</h1>
 <div class="d-flex justify-content-between mb-4">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
-        <li class="breadcrumb-item active">Movies</li>
+        <li class="breadcrumb-item active">Users</li>
     </ol>
     <a href="#">
         <button class="btn btn-success" type="submit">Create Data</button>
@@ -14,7 +14,7 @@
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
-        Movies Data
+        Users Data
     </div>
     <div class="card-body">
         <table id="datatablesSimple">
@@ -43,62 +43,62 @@
             <tbody>
                 <tr>
                     <td>1</td>
-                    <td>Nanda Putra</td>
-                    <td>Putra</td>
-                    <td>nandwib</td>
-                    <td>nandawibowo356@gmail.com</td>
-                    <td>Administrator</td>
+                    <th>Park Jimin</th>
+                    <th>Jimin</th>
+                    <th>jimin13</th>
+                    <th>JiminBorahae@gmail.com</th>
+                    <th>user</th>
                     <td>
-                        <a href="" class="btn btn-sm btn-warning"> Edit</a>
-                        <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
+                        <a href="" class="btn btn-sm btn-primary"> Edit</a>
+                        <a href="" class="btn btn-sm btn-dark" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
                     </td>
                 </tr>
                 <tr>
                     <td>2</td>
-                    <td>Putra Wibowo</td>
-                    <td>wibowoPutra</td>
-                    <td>putra</td>
-                    <td>putrapras456@gmail.com</td>
-                    <td>user</td>
+                    <th>Min Yoongi</th>
+                    <th>Suga</th>
+                    <th>Suga09</th>
+                    <th>YoongiSuga@gmail.com</th>
+                    <th>user</th>
                     <td>
-                        <a href="" class="btn btn-sm btn-warning"> Edit</a>
-                        <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
+                        <a href="" class="btn btn-sm btn-primary"> Edit</a>
+                        <a href="" class="btn btn-sm btn-dark" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
                     </td>
                 </tr>
                 <tr>
                     <td>3</td>
-                    <td>Nabilah Puji Saputri</td>
-                    <td>nabilaS</td>
-                    <td>nabilahps_</td>
-                    <td>nabpuji33@gmail.com</td>
-                    <td>user</td>
+                    <th>Seok Jin</th>
+                    <th>Jin</th>
+                    <th>Jin0412</th>
+                    <th>JinBts@gmail.com</th>
+                    <th>user</th>
                     <td>
-                        <a href="" class="btn btn-sm btn-warning"> Edit</a>
-                        <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
+                        <a href="" class="btn btn-sm btn-primary"> Edit</a>
+                        <a href="" class="btn btn-sm btn-dark" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
                     </td>
                 </tr>
                 <tr>
                     <td>4</td>
-                    <td>Saputri Nabilah</td>
-                    <td>putri</td>
-                    <td>saputri12</td>
-                    <td>saputribilah56@gmail.com</td>
-                    <td>user</td>
+                    <th>Namjoon</th>
+                    <th>RM</th>
+                    <th>RM1209</th>
+                    <th>NamjoonBTS@gmail.com</th>
+                    <th>user</th>
                     <td>
-                        <a href="" class="btn btn-sm btn-warning"> Edit</a>
-                        <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
+                        <a href="" class="btn btn-sm btn-primary"> Edit</a>
+                        <a href="" class="btn btn-sm btn-dark" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
                     </td>
                 </tr>
                 <tr>
                     <td>5</td>
-                    <td>Puji nabilah</td>
-                    <td>pujiii</td>
-                    <td>Pujibilah</td>
-                    <td>pujibilah34@gmail.com</td>
-                    <td>user</td>
+                    <th>winni</th>
+                    <th>winni</th>
+                    <th>123aaa</th>
+                    <th>winni@gmail.com</th>
+                    <th>user</th>
                     <td>
-                        <a href="" class="btn btn-sm btn-warning"> Edit</a>
-                        <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
+                        <a href="" class="btn btn-sm btn-primary"> Edit</a>
+                        <a href="" class="btn btn-sm btn-dark" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
                     </td>
                 </tr>
             </tbody>

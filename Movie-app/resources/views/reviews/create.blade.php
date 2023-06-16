@@ -1,11 +1,11 @@
 @extends('layouts.main')
 
 @section('content')
-    <h1 class="mt-4">Review Data</h1>
+    <h1 class="mt-4">Reviews Data</h1>
     <div class="mb-4">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
-            <li class="breadcrumb-item active">Review</li>
+            <li class="breadcrumb-item active">Reviews</li>
         </ol>
     </div>
     @if ($errors->any())
@@ -20,30 +20,30 @@
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            Review Data
+            Reviews Data
         </div>
         <div class="card-body">
             <form method="POST" action="/reviews">
                 @csrf
                 <div>
-                    <label for="movie">Movie:</label>
-                    <input type="text" id="movie" name="movie">
+                    <label for="film">Film:</label>
+                    <input type="text" id="film" name="film">
                 </div>
                 <div>
-                    <label for="poster">User:</label>
+                    <label for="user">User:</label>
                     <input type="text" id="user" name="user">
                 </div>
                 <div>
-                    <label for="negara">Rating:</label>
+                    <label for="rating">Rating:</label>
                     <input type="text" id="rating" name="rating">
                 </div>
                 <div>
-                    <label for="comment">Comment:</label>
-                    <input type="text" id="comment" name="comment">
+                    <label for="review">Review:</label>
+                    <input type="text" id="review" name="review">
                 </div>
                 <div>
-                    <label for="tanggal">Tanggal:</label>
-                    <input type="date" id="tanggal" name="tanggal">
+                    <label for="tahun">Tahun:</label>
+                    <input type="text" id="tahun" name="tahun">
                 </div>
                 <button type="submit">Add</button>
             </form>

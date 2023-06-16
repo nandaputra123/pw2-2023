@@ -13,22 +13,42 @@ class MoviesSeeder extends Seeder
      */
     public function run(): void
     {
-        Movie::create([
-            'judul' => 'The Shawshank Redemption',
+       Movie::create([
+            'judul' => 'The Shawshank Redeption',
             'poster' => 'image.png',
-            'genre_id' => '1',
-            'negara' => 'USA',
+            'genre_id' => 1,
+            'negara' => 'UAS',
             'tahun' => '1994',
-            'rating' => '9.8',
-        ]);
+            'rating' => '9.8'
+       ]);
 
-        Movie::create([
-            'judul' => 'The Gofather',
-            'poster' => 'image.png',
-            'genre_id' => '3',
-            'negara' => 'USA',
-            'tahun' => '1972',
-            'rating' => '8.0',
-        ]);
+       Movie::create([
+        'judul' => 'The Gofather',
+        'poster' => 'image.png',
+        'genre_id' => 3,
+        'negara' => 'USA',
+        'tahun' => '1972',
+        'rating' => '8.8'
+   ]);
+
+   Movie::create([
+     'judul' => 'WkwkwkFilm',
+     'poster' => 'image.png',
+     'genre_id' => 4,
+     'negara' => 'Konoha',
+     'tahun' => '2021',
+     'rating' => '8.8'
+]);
+
+Movie::create([
+     'judul' => 'Drama Gedung Politikus',
+     'poster' => 'image.png',
+     'genre_id' => 5,
+     'negara' => 'PLUS 62',
+     'tahun' => '2022',
+     'rating' => '8.9'
+]);
+
+     
     }
 }

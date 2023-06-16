@@ -34,11 +34,11 @@ class ReviewController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'movie' => 'required',
+            'film' => 'required',
             'user' => 'required',
             'rating' => 'required',
-            'comment' => 'required',
-            'tanggal' => 'required|date',
+            'review' => 'required',
+            'tahun' => 'required|date',
             
         ]);
 
@@ -59,7 +59,7 @@ class ReviewController extends Controller
      */
     public function edit(Review $review)
     {
-        $review = Review::all();
+        
         return view('reviews.edit', compact('review'));
     }
 
@@ -69,12 +69,11 @@ class ReviewController extends Controller
     public function update(Request $request, Review $review)
     {
         $validatedData = $request->validate([
-            'id' =>'required',
-            'movie' => 'required',
+            'film' => 'required',
             'user' => 'required',
             'rating' => 'required',
-            'comment' => 'required',
-            'tanggal' => 'required|date',
+            'review' => 'required',
+            'tahun' => 'required|date',
             
         ]);
     

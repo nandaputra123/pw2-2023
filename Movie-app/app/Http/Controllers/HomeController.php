@@ -12,6 +12,5 @@ class HomeController extends Controller
     {
         $movies = Movie::all();
         return view('welcome', compact('movies'));
-        
     }
 }

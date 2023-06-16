@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Movie;
 use App\Http\Controllers\Controller;
-use App\Models\Genres;
+use App\Models\Genre;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
@@ -14,8 +14,9 @@ class MovieController extends Controller
      */
     public function index()
     {
-        $movies = Movie::all();
-        return view('movies.index', compact('movies'));
+       $movies = Movie::all();
+
+       return view('movies.index', compact('movies'));
     }
 
     /**
@@ -23,7 +24,7 @@ class MovieController extends Controller
      */
     public function create()
     {
-        $genres = Genres::all();
+       $genres = Genre::all();
         return view('movies.create', compact('genres'));
     }
 
@@ -32,18 +33,27 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        $validateData = $request->validate([
+        $validatedData = $request->validate([
             'judul' => 'required',
             'poster' => 'required',
             'genre_id' => 'required',
             'negara' => 'required',
             'tahun' => 'required|integer',
             'rating' => 'required|numeric',
-            
         ]);
 
-        Movie::create($validateData);
-        return redirect('/movies')->with('success', 'Data Berhasil ditambahkan');
+        if($request->hasFile('poster')) {
+            //Set img name
+            $extension = $request->file('poster')->getClientOriginalExtension();
+            $imageName = time(). '.'. $extension;
+
+            //store to storage
+            $request->file('poster')->storeAs('assets/img', $imageName, 'public');
+            $validatedData['poster'] ='storage/'. $imageName;
+        }
+
+        Movie::create($validatedData);
+        return redirect('/movies')->with('success', 'Movie added successfully!');
     }
 
     /**
@@ -59,7 +69,7 @@ class MovieController extends Controller
      */
     public function edit(Movie $movie)
     {
-        $genres = Genres::all();
+        $genres = Genre::all();
         return view('movies.edit', compact('movie','genres'));
     }
 
@@ -68,18 +78,18 @@ class MovieController extends Controller
      */
     public function update(Request $request, Movie $movie)
     {
-        $validateData = $request->validate([
+        $validatedData = $request->validate([
             'judul' => 'required',
             'poster' => 'required',
             'genre_id' => 'required',
             'negara' => 'required',
             'tahun' => 'required|integer',
             'rating' => 'required|numeric',
-            
         ]);
-
-        $movie->update($validateData);
-        return redirect('/movies')->with('success', 'Data Berhasil diupdate');
+    
+        $movie->update($validatedData);
+    
+        return redirect('/movies')->with('success', 'Movie updated successfully!');
     }
 
     /**
@@ -88,6 +98,6 @@ class MovieController extends Controller
     public function destroy(Movie $movie)
     {
         $movie->delete();
-        return redirect('/movies')->with('success', 'Data Berhasil dihapus');
+        return redirect('/movies')->with('success', 'Movie deleted successfully!');
     }
 }
